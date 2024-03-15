@@ -1,0 +1,29 @@
+
+
+@media screen and (max-width: 425px) {
+    .formContainer .formWrapper {
+        background-color: #fff;
+        padding: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 10px 10px 15px #d1d1d1;
+        
+        form .title {
+            text-align: center;
+        }
+    }
+    
+    .formImage{
+
+        img{
+            width: 200px !important;
+        }
+ 
+    }
+
+}
