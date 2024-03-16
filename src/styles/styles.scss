@@ -100,5 +100,105 @@ $fontStack: "Arial";
     }
 }
 
+.home {
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+
+    .container {
+        background-color: #d1d1d1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        
+        .sideNavbar{
+            display: flex;
+            flex-direction: column;
+            background-color: red;
+            width: 7%;
+            .profile {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                background-color: #444;
+                height: 15%;
+                img {
+                    width: 60px;
+                    border-radius: 50%;
+                    border: 1px solid red;
+                }
+            }
+            
+            .sections {
+                padding-top: 30px;
+                height: 70%;
+                background-color: #4a6ddd;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .actions {
+                height: 15%;
+                background: #fff;
+                background-color: #4addc9;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        .chatSidebar{
+            background-color: yellow;
+            width: 25%;
+            .searchBar{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                height: 15%;
+            }
+            .userChats{
+                background-color: #fff;
+                height: 85%;
+                padding: 15px;
+                overflow-y: scroll;
+                .userInfo{
+                    background-color: #fff;
+                    display: flex;
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid #000;
+                    .userProfile {
+                        width: 60px;
+                    }
+
+                    .userDetails {
+                        display: flex;
+                        width: 100%;
+                        flex-wrap: wrap;
+                        padding: 10px;
+                        .userName {
+                            width: 70%;
+                        }
+                        .messageTime {
+                            width: 30%;
+                        }
+                        .messageText{
+                            margin-top: 10px;
+                        }
+                    }
+
+                }
+            }
+        }
+        .chatBox {
+            background-color: green;
+            width: 70%;
+        }
+    }
+}
 
 

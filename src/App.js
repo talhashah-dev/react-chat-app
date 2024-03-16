@@ -1,5 +1,5 @@
 import "./styles/styles.scss";
-import "./styles/mobile.scss";
+import "./styles/media-query.scss";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
