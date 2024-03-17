@@ -1,6 +1,7 @@
 $containerBackground: #f8f8f8;
 $fontStack: "Arial";
 
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -9,101 +10,10 @@ $fontStack: "Arial";
 }
 
 
-.formContainer {
-    background-color: $containerBackground;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .formWrapper{
-        background-color: #fff;
-        padding: 70px;
-        display: flex;
-        flex-direction: row-reverse;
-        gap: 15px;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 10px 10px 15px #d1d1d1;
-
-        .formImage{
-            display: flex;
-            flex-direction: column;
-            img{
-                width: 300px;
-            }
-            .link {
-                color: #444;
-                text-decoration: none;
-            }
-        }
-
-        form{
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            label {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                img {
-                    width: 20px;
-                }
-                p {
-                    font-size: 14px;
-                }
-
-            }
-
-            div {
-                // display: flex;
-                // width: 60%;
-                input{
-                    width: auto;
-                }
-            }
-
-            .title{
-                font-weight: 700;
-                font-size: 36px;
-                text-align: left;
-            }
-
-            input{
-                border: none;
-                border-bottom: 1px solid gray;
-                padding: 10px;
-                outline: none;
-                width: 18rem;
-            } 
-            input:focus{
-                background-color: #0001;
-            }
-            #fileInput{
-                display: none;
-            }
-            button{
-                padding: 8px;
-                background-color: #6d84d1;
-                border: none;
-                cursor: pointer;
-                border-radius: 2px;
-                color: #fff;
-                font-size: 18px;
-                width: 100px;
-            }
-            button:active{
-                background-color: #4a6ddd;
-            }
-        }
-    }
-}
 
 .home {
     width: 100%;
     height: 100vh;
-    background-color: red;
 
     .container {
         background-color: #d1d1d1;
@@ -111,29 +21,29 @@ $fontStack: "Arial";
         height: 100%;
         display: flex;
         
+        // ===== Side Navbar
         .sideNavbar{
             display: flex;
             flex-direction: column;
-            background-color: red;
-            width: 7%;
+            width: 5%;
             .profile {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 padding: 10px;
-                background-color: #444;
+                background-color: #141A26;
                 height: 15%;
                 img {
                     width: 60px;
                     border-radius: 50%;
-                    border: 1px solid red;
+                    border: 1px solid #d13c3c;
                 }
             }
             
             .sections {
                 padding-top: 30px;
                 height: 70%;
-                background-color: #4a6ddd;
+                background-color: #181F2E;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
@@ -142,38 +52,92 @@ $fontStack: "Arial";
 
             .actions {
                 height: 15%;
-                background: #fff;
-                background-color: #4addc9;
+                background-color: #202A3F;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                gap: 15px;
+                gap: 5px;
             }
         }
         .chatSidebar{
             background-color: yellow;
             width: 25%;
-            .searchBar{
+            ::-webkit-scrollbar {
+                width: 16px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+            
+            
+            ::-webkit-scrollbar-thumb {
+                border-radius: 8px;
+                border: 3px solid transparent;
+                background-clip: content-box;
+                background-color: #d55959;
+            }
+            
+            ::-webkit-scrollbar-thumb:active {
+                background-color: #d13c3c;
+            
+            }
+
+            // ============= Search Bar Start
+            .searchContainer{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 20px;
+                padding: 10px;
                 height: 15%;
+                background-color: #E2EEF7;
+                
+                .searchForm {
+                    height: 40px;
+                    width: 95%;
+                    background-color: #fff;
+                    border-radius: 25px;
+                    border: 1px solid rgb(184, 184, 184);
+                    display: flex;
+                    flex-direction: row;
+                    // justify-content: center;
+                    align-items: center;
+                    padding: 5px 10px;
+                    gap: 10px;
+
+                    input {
+                        width: 80%;
+                        border: none;
+                        outline: none;
+                        font-size: 16px;
+                    }
+                }
+
             }
+            // ============= Search Bar End
+
+
             .userChats{
-                background-color: #fff;
+                background-color: #EBF4FB;
                 height: 85%;
                 padding: 15px;
                 overflow-y: scroll;
+
                 .userInfo{
-                    background-color: #fff;
+                    background-color: transparent;
                     display: flex;
+                    align-items: center;
                     padding-bottom: 15px;
-                    border-bottom: 1px solid #000;
+                    border-bottom: 1px solid rgb(184, 184, 184);
+
                     .userProfile {
-                        width: 60px;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
                     }
+
+                
 
                     .userDetails {
                         display: flex;
@@ -181,12 +145,16 @@ $fontStack: "Arial";
                         flex-wrap: wrap;
                         padding: 10px;
                         .userName {
+                            font-size: 18px;
+                            font-weight: 600;
                             width: 70%;
                         }
                         .messageTime {
+                            color: #646464;
                             width: 30%;
                         }
                         .messageText{
+                            color: #646464;
                             margin-top: 10px;
                         }
                     }
@@ -194,9 +162,51 @@ $fontStack: "Arial";
                 }
             }
         }
+        
         .chatBox {
-            background-color: green;
+            background-color: #FFFFFF;
             width: 70%;
+            padding: 25px;
+
+            .chatHeader {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgb(184, 184, 184);
+                
+                .callAction {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+            }
+
+            .chatBody {
+                height: 75%;
+            }
+
+            .messageInput {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 0;
+                border-top: 1px solid rgb(184, 184, 184);
+                width: 100%;
+                .inputFeild{
+                    width: 90%;
+                    input{
+                        width: 100%;
+                        height: 50px;
+                        font-size: 18px;
+                        border: none;
+                        appearance: none;
+                        background-color: transparent;
+                        outline: none;
+                    }
+                }
+            }
         }
     }
 }

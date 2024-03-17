@@ -1,4 +1,5 @@
 import "./styles/styles.scss";
+import "./styles/loginSignup.scss";
 import "./styles/media-query.scss";
 import Register from "./pages/Register";
 import Login from "./pages/Login";

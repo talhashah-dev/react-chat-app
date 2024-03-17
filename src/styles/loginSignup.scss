@@ -1,0 +1,88 @@
+.formContainer {
+    background-color: #f8f8f8;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .formWrapper{
+        background-color: #fff;
+        padding: 70px;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 15px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 10px 10px 15px #d1d1d1;
+
+        .formImage{
+            display: flex;
+            flex-direction: column;
+            img{
+                width: 300px;
+            }
+            .link {
+                color: #444;
+                text-decoration: none;
+            }
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                img {
+                    width: 20px;
+                }
+                p {
+                    font-size: 14px;
+                }
+
+            }
+
+            div {
+                input{
+                    width: auto;
+                }
+            }
+
+            .title{
+                font-weight: 700;
+                font-size: 36px;
+                text-align: left;
+            }
+
+            input{
+                border: none;
+                border-bottom: 1px solid gray;
+                padding: 10px;
+                outline: none;
+                width: 18rem;
+            } 
+            input:focus{
+                background-color: #0001;
+            }
+            #fileInput{
+                display: none;
+            }
+            button{
+                padding: 8px;
+                background-color: #6d84d1;
+                border: none;
+                cursor: pointer;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 18px;
+                width: 100px;
+            }
+            button:active{
+                background-color: #4a6ddd;
+            }
+        }
+    }
+}

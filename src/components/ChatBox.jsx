@@ -1,9 +1,14 @@
 import React from 'react'
+import ChatHeader from './ChatHeader'
+import MessageInput from './MessageInput'
+import ChatBody from './ChatBody'
 
 function ChatBox() {
   return (
     <div className="chatBox">
-      <h1>ChatBox</h1>
+        <ChatHeader />
+        <ChatBody />
+        <MessageInput />
     </div>
   )
 }
