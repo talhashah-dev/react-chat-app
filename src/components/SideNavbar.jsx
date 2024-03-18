@@ -12,18 +12,18 @@ function SideNavbar() {
       </div>
       <div className="sections">
           <h2>
-            <FaMessage style={{color: "#fff"}} />
+            <FaMessage style={{color: "#fff", cursor:"pointer"}} />
           </h2>
           <h2>
-            <FaUser style={{color: "#fff"}}/>
+            <FaUser style={{color: "#fff", cursor:"pointer"}}/>
           </h2>
       </div>
       <div className="actions">
         <h2>
-           <FaGear style={{color: "#fff"}}/>
+           <FaGear style={{color: "#fff", cursor:"pointer"}}/>
         </h2>
         <h2>
-          <IoIosLogOut style={{color: "#fff"}} />
+          <IoIosLogOut style={{color: "#fff", cursor:"pointer"}} />
         </h2>
       </div>
     </div>

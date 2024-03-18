@@ -212,3 +212,25 @@ $fontStack: "Arial";
 }
 
 
+// ====================== Media Query ======================
+
+// For Mobile Screen
+@media screen and (max-width: 425px) {
+    .formContainer .formWrapper {
+        padding: 10px !important;
+        flex-direction: column-reverse !important;
+        
+        form .title {
+            text-align: center !important;
+        }
+    }
+    
+    .formImage{
+        align-items: center;
+        img{
+            width: 150px !important;
+        }
+ 
+    }
+
+}
