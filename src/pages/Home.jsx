@@ -1,14 +1,14 @@
 import React from 'react'
-import SideNavbar from '../components/SideNavbar'
-import ChatSidebar from "../components/ChatSidebar"
+import Sidebar from '../components/Sidebar'
+import Chats from "../components/Chats"
 import ChatBox from '../components/ChatBox'
 
 function Home() {
   return (
     <div className="home">
       <div className="container">
-        <SideNavbar />
-        <ChatSidebar />
+        <Sidebar />
+        <Chats />
         <ChatBox />
       </div>
     </div>

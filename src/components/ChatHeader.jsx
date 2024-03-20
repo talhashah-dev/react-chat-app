@@ -1,8 +1,6 @@
-import React from 'react'
+import React from "react";
 import { IoCallSharp } from "react-icons/io5";
 import { IoIosVideocam } from "react-icons/io";
-
-
 
 function ChatHeader() {
   return (
@@ -12,11 +10,11 @@ function ChatHeader() {
         <p className="userStats">Online</p>
       </div>
       <div className="callAction">
-        <IoIosVideocam style={{fontSize: "26px"}} />
-        <IoCallSharp style={{fontSize: "22px"}} />
+        <IoIosVideocam style={{ fontSize: "26px" }} />
+        <IoCallSharp style={{ fontSize: "22px" }} />
       </div>
     </div>
-  )
+  );
 }
 
-export default ChatHeader
+export default ChatHeader;

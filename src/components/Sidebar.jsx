@@ -8,7 +8,7 @@ function SideNavbar() {
   return (
     <div className="sideNavbar">
       <div className="profile">
-        <img src="https://wallpapers.com/images/hd/aesthetic-profile-picture-jptwp00h5yjb14wx.jpg" alt="" />
+        {/* <img src="https://wallpapers.com/images/hd/aesthetic-profile-picture-jptwp00h5yjb14wx.jpg" alt="" /> */}
       </div>
       <div className="sections">
           <h2>

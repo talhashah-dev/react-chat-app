@@ -1,16 +1,16 @@
-import React from 'react'
-import ChatHeader from './ChatHeader'
-import MessageInput from './MessageInput'
-import ChatBody from './ChatBody'
+import React from "react";
+import ChatHeader from "./ChatHeader";
+import Input from "./Input";
+import MessageBox from "./MessageBox";
 
 function ChatBox() {
   return (
     <div className="chatBox">
-        <ChatHeader />
-        <ChatBody />
-        <MessageInput />
+      <ChatHeader />
+      <MessageBox />
+      <Input />
     </div>
-  )
+  );
 }
 
-export default ChatBox
+export default ChatBox;

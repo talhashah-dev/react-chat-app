@@ -9,7 +9,23 @@ $fontStack: "Arial";
     font-family: $fontStack;
 }
 
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100vh;
 
+    button{
+        padding: 10px 15px;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: lightblue;
+    }
+}
 
 .home {
     width: 100%;
@@ -32,7 +48,7 @@ $fontStack: "Arial";
                 align-items: center;
                 padding: 10px;
                 background-color: #141A26;
-                height: 15%;
+                height: 10%;
                 img {
                     width: 60px;
                     border-radius: 50%;
@@ -61,27 +77,24 @@ $fontStack: "Arial";
             }
         }
         .chatSidebar{
-            background-color: yellow;
             width: 25%;
             ::-webkit-scrollbar {
-                width: 16px;
+                width: 8px;
             }
             
             ::-webkit-scrollbar-track {
-                background-color: transparent;
+                border-radius: 8px;
+                background-color: #c1c2c5;
             }
             
             
             ::-webkit-scrollbar-thumb {
                 border-radius: 8px;
-                border: 3px solid transparent;
-                background-clip: content-box;
-                background-color: #d55959;
+                background-color: #202A3F;
             }
             
             ::-webkit-scrollbar-thumb:active {
-                background-color: #d13c3c;
-            
+                background-color: #141A26;
             }
 
             // ============= Search Bar Start
@@ -90,13 +103,13 @@ $fontStack: "Arial";
                 justify-content: center;
                 align-items: center;
                 padding: 10px;
-                height: 15%;
-                background-color: #E2EEF7;
+                height: 10%;
+                background-color: #fff;
                 
                 .searchForm {
                     height: 40px;
                     width: 95%;
-                    background-color: #fff;
+                    background-color: #f7f7f7;
                     border-radius: 25px;
                     border: 1px solid rgb(184, 184, 184);
                     display: flex;
@@ -111,6 +124,7 @@ $fontStack: "Arial";
                         border: none;
                         outline: none;
                         font-size: 16px;
+                        background-color: #f7f7f7;
                     }
                 }
 
@@ -119,17 +133,21 @@ $fontStack: "Arial";
 
 
             .userChats{
-                background-color: #EBF4FB;
-                height: 85%;
-                padding: 15px;
+                background-color: #FFF;
+                height: 90%;
+                padding: 0;
                 overflow-y: scroll;
+
+                .userInfo:hover{
+                    background-color: #ddddddad;
+                    cursor: pointer;
+                }
 
                 .userInfo{
                     background-color: transparent;
                     display: flex;
                     align-items: center;
-                    padding-bottom: 15px;
-                    border-bottom: 1px solid rgb(184, 184, 184);
+                    padding: 5px 10px;
 
                     .userProfile {
                         width: 50px;
@@ -137,16 +155,14 @@ $fontStack: "Arial";
                         border-radius: 50%;
                     }
 
-                
-
                     .userDetails {
                         display: flex;
                         width: 100%;
                         flex-wrap: wrap;
                         padding: 10px;
                         .userName {
-                            font-size: 18px;
-                            font-weight: 600;
+                            font-size: 16px;
+                            font-weight: 500;
                             width: 70%;
                         }
                         .messageTime {
@@ -166,44 +182,98 @@ $fontStack: "Arial";
         .chatBox {
             background-color: #FFFFFF;
             width: 70%;
-            padding: 25px;
+            height: 100%;
 
             .chatHeader {
+                height: 10%;
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding-bottom: 20px;
-                border-bottom: 1px solid rgb(184, 184, 184);
+                padding: 0 20px;
+                .userStats{
+                    color: green;
+                    font-weight: 600;
+                }
                 
                 .callAction {
                     display: flex;
                     align-items: center;
-                    gap: 10px;
+                    gap: 20px;
                 }
             }
 
-            .chatBody {
-                height: 75%;
+            .messageBox {
+                height: 80%;
+                // background-image: url("../assets/images/chat_bg.jpg");
+                background-color: #141A26;
+                background-position: center;
+                background-size: contain;
+                background-repeat: round;
+                padding: 0 20px;
+                overflow-y: scroll;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                
+                .message{
+                    max-width: 60%;
+                    width: fit-content;
+                    padding: 15px 10px;
+                    background-color: #fff;
+                    border-radius: 10px 10px 10px 0;
+                }
+
             }
 
-            .messageInput {
+            ::-webkit-scrollbar {
+                width: 6px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                border-radius: 8px;
+                background-color: #c1c2c5;
+            }
+            
+            
+            ::-webkit-scrollbar-thumb {
+                border-radius: 8px;
+                background-color: #202A3F;
+            }
+            
+            ::-webkit-scrollbar-thumb:active {
+                background-color: #141A26;
+            }
+
+            .input {
+                height: 10%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 20px 0;
+                padding: 0 20px;
                 border-top: 1px solid rgb(184, 184, 184);
                 width: 100%;
-                .inputFeild{
-                    width: 90%;
+                .send {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 10px;
+                    
                     input{
-                        width: 100%;
-                        height: 50px;
-                        font-size: 18px;
-                        border: none;
-                        appearance: none;
-                        background-color: transparent;
-                        outline: none;
+                        display: none;
+                    }
+                }
+
+                input{
+                    width: 100%;
+                    height: 50px;
+                    font-size: 18px;
+                    border: none;
+                    appearance: none;
+                    background-color: transparent;
+                    outline: none;
+                    &::placeholder{
+                        color: lightgray;
                     }
                 }
             }
