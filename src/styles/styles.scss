@@ -205,24 +205,28 @@ $fontStack: "Arial";
 
             .messageBox {
                 height: 80%;
-                // background-image: url("../assets/images/chat_bg.jpg");
                 background-color: #141A26;
                 background-position: center;
                 background-size: contain;
                 background-repeat: round;
                 padding: 0 20px;
                 overflow-y: scroll;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
                 
-                .message{
-                    max-width: 60%;
-                    width: fit-content;
-                    padding: 15px 10px;
-                    background-color: #fff;
-                    border-radius: 10px 10px 10px 0;
+                .message{   
+                    display: flex;
+                    flex-direction: column;
+                    
+                    
+                    p{
+                        margin: 5px 0;
+                        padding: 10px 10px;
+                        max-width: 60%;
+                        width: fit-content;
+                        border-radius: 15px 15px 15px 0;
+                        background-color: #fff;
+                    }
                 }
+                
 
             }
 
