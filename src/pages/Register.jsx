@@ -1,49 +1,40 @@
 import React, { useState } from "react";
 import SignupImg from "../assets/images/signup.png";
-import { FaImage } from "react-icons/fa";
+// import { FaImage } from "react-icons/fa"
 import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, storage } from "../firebase";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { doc, setDoc } from "firebase/firestore";
+import { createUserWithEmailAndPassword} from "firebase/auth";
+import { auth, db } from "../firebase";
+import { doc, setDoc } from "firebase/firestore"; 
+
 
 function Register() {
   const [err, setErr] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const name = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
+    let name = e.target[0].value;
+    let email = e.target[1].value;
+    let password = e.target[2].value;
 
     try {
-      const res = createUserWithEmailAndPassword(auth, email, password);
-
-      const storageRef = ref(storage, "images/rivers.jpg");
-
-      const uploadTask = uploadBytesResumable(storageRef, file);
-
-      uploadTask.on(
-        "state_changed",
-
-        (error) => {
-          setErr(true);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateProfile(res.user, {
-              name,
-              photoURL: downloadURL,
-            });
-            await setDoc(doc(db, "user", res.user.uid), {
-              uid: res.user.uid,
-              name,
-              email,
-              photoURL: downloadURL,
-            });
-          });
-        }
-      );
+      console.log(name, email, password)
+      const res = await createUserWithEmailAndPassword(auth, email, password)
+      await setDoc(doc(db, "users/", res.user.uid), {
+        uid: res.user.uid,
+        name,
+        email,
+      })
+      .then(
+        console.log(res),
+        e.target[0].value = "",
+        e.target[1].value = "",
+        e.target[2].value = ""
+      )
+      .catch((error) => {
+        console.log(error)
+      });
+    
     } catch (error) {
+      console.log(error)
       setErr(true);
     }
   };
@@ -59,22 +50,23 @@ function Register() {
         </div>
         <form onSubmit={handleSubmit}>
           <span className="title">Sign up</span>
-          <input type="text" placeholder="Name" minLength="2" maxLength="20" />
-          <input type="email" placeholder="Email" />
+          <input type="text" placeholder="Name" minLength="2" maxLength="20" required />
+          <input type="email" placeholder="Email" required />
           <input
             type="password"
             placeholder="Password"
             minLength="6"
             maxLength="10"
+            required
           />
-          <label htmlFor="imgInput">
+          {/* <label htmlFor="imgInput">
             <h2>
               <FaImage />
             </h2>
           </label>
-          <input type="file" id="imgInput" style={{ display: "none" }} />
+          <input type="file" id="imgInput" style={{ display: "none" }} required /> */}
           <button>Sign Up</button>
-          {err && <span>There is an Error!</span>}
+          {err && <b style={{color: "red"}}>Error!</b>}
         </form>
       </div>
     </div>
