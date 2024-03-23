@@ -67,6 +67,11 @@
             input:focus{
                 background-color: #0001;
             }
+
+            input[type="checkbox"]{
+                width: auto !important;
+            }
+
             #fileInput{
                 display: none;
             }

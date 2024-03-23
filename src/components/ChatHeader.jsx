@@ -1,17 +1,19 @@
 import React from "react";
-import { IoCallSharp } from "react-icons/io5";
-import { IoIosVideocam } from "react-icons/io";
+import { FaPhone } from "react-icons/fa6";
+import { FaVideo } from "react-icons/fa";
+
+
 
 function ChatHeader() {
   return (
     <div className="chatHeader">
       <div className="userInfo">
-        <h2 className="userName">Rehana</h2>
-        <p className="userStats">Online</p>
+        <p className="userName">Rehana</p>
+        <p className="userStats">last seen recently</p>
       </div>
       <div className="callAction">
-        <IoIosVideocam style={{ fontSize: "26px" }} />
-        <IoCallSharp style={{ fontSize: "22px" }} />
+        <FaPhone style={{ fontSize: "22px" }} />
+        <FaVideo style={{ fontSize: "22px" }} />
       </div>
     </div>
   );

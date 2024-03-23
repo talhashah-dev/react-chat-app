@@ -1,12 +1,25 @@
 $containerBackground: #f8f8f8;
-$fontStack: "Arial";
+$hoverBg: #eee;
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("../assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "iran-sans";
+    src: url("../assets/fonts/iran-sans.ttf");
+}
 
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: $fontStack;
+}
+
+body{
+    font-family: "Roboto-Regular", sans-serif;
 }
 
 .notFound {
@@ -32,7 +45,7 @@ $fontStack: "Arial";
     height: 100vh;
 
     .container {
-        background-color: #d1d1d1;
+        background-color: #141A26;
         width: 100%;
         height: 100%;
         display: flex;
@@ -42,24 +55,11 @@ $fontStack: "Arial";
             display: flex;
             flex-direction: column;
             width: 5%;
-            .profile {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 10px;
-                background-color: #141A26;
-                height: 10%;
-                img {
-                    width: 60px;
-                    border-radius: 50%;
-                    border: 1px solid #d13c3c;
-                }
-            }
-            
+            background-color: #141A26;
+
             .sections {
                 padding-top: 30px;
-                height: 70%;
-                background-color: #181F2E;
+                height: 80%;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
@@ -67,24 +67,22 @@ $fontStack: "Arial";
             }
 
             .actions {
-                height: 15%;
-                background-color: #202A3F;
+                height: 20%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                gap: 5px;
+                gap: 10px;
             }
         }
         .chatSidebar{
             width: 25%;
             ::-webkit-scrollbar {
-                width: 8px;
+                width: 6px;
             }
             
             ::-webkit-scrollbar-track {
-                border-radius: 8px;
-                background-color: #c1c2c5;
+                background-color: transparent;
             }
             
             
@@ -93,28 +91,23 @@ $fontStack: "Arial";
                 background-color: #202A3F;
             }
             
-            ::-webkit-scrollbar-thumb:active {
-                background-color: #141A26;
-            }
 
             // ============= Search Bar Start
             .searchContainer{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 10px;
                 height: 10%;
-                background-color: #fff;
+                background-color: #141A26;
                 
                 .searchForm {
                     height: 40px;
-                    width: 95%;
-                    background-color: #f7f7f7;
-                    border-radius: 25px;
+                    width: 100%;
+                    background-color: #fff;
+                    border-radius: 5px;
                     border: 1px solid rgb(184, 184, 184);
                     display: flex;
                     flex-direction: row;
-                    // justify-content: center;
                     align-items: center;
                     padding: 5px 10px;
                     gap: 10px;
@@ -124,7 +117,7 @@ $fontStack: "Arial";
                         border: none;
                         outline: none;
                         font-size: 16px;
-                        background-color: #f7f7f7;
+                        background-color: #fff;
                     }
                 }
 
@@ -137,9 +130,12 @@ $fontStack: "Arial";
                 height: 90%;
                 padding: 0;
                 overflow-y: scroll;
+                border-top-left-radius: 5px;
+                padding: 5px 0 0 5px;
+                border-right: 1px solid rgb(184,184,184);
 
                 .userInfo:hover{
-                    background-color: #ddddddad;
+                    background-color: $hoverBg;
                     cursor: pointer;
                 }
 
@@ -148,6 +144,7 @@ $fontStack: "Arial";
                     display: flex;
                     align-items: center;
                     padding: 5px 10px;
+                    border-radius: 5px;
 
                     .userProfile {
                         width: 50px;
@@ -191,38 +188,54 @@ $fontStack: "Arial";
                 justify-content: space-between;
                 align-items: center;
                 padding: 0 20px;
+                background-color: #141A26;
+                color: #fff;
+
+                .userName{
+                    font-size: 22px;
+                }
+
                 .userStats{
-                    color: green;
-                    font-weight: 600;
+                    color: gray;
+                    font-size: 14px;
                 }
                 
                 .callAction {
                     display: flex;
                     align-items: center;
                     gap: 20px;
+                    border: 1px solid gray;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    * {
+                        cursor: pointer;
+                    }
                 }
             }
 
             .messageBox {
                 height: 80%;
                 background-color: #141A26;
+                background-image: url("../assets/images/chat_bg.jpg");
                 background-position: center;
                 background-size: contain;
                 background-repeat: round;
                 padding: 0 20px;
+                padding-top: 10px;
                 overflow-y: scroll;
                 
                 .message{   
                     display: flex;
                     flex-direction: column;
                     
-                    
                     p{
                         margin: 5px 0;
                         padding: 10px 10px;
                         max-width: 60%;
+                        width: 10px;
                         width: fit-content;
-                        border-radius: 15px 15px 15px 0;
+                        border-radius: 5px 5px 5px 0;
+                        box-shadow: 2px 2px 5px #ccc;
                         background-color: #fff;
                     }
                 }
@@ -235,19 +248,15 @@ $fontStack: "Arial";
             }
             
             ::-webkit-scrollbar-track {
-                border-radius: 8px;
-                background-color: #c1c2c5;
+                background-color: transparent;
             }
-            
             
             ::-webkit-scrollbar-thumb {
                 border-radius: 8px;
                 background-color: #202A3F;
             }
             
-            ::-webkit-scrollbar-thumb:active {
-                background-color: #141A26;
-            }
+    
 
             .input {
                 height: 10%;
@@ -256,6 +265,7 @@ $fontStack: "Arial";
                 justify-content: space-between;
                 padding: 0 20px;
                 border-top: 1px solid rgb(184, 184, 184);
+                background-color: #fff;
                 width: 100%;
                 .send {
                     display: flex;
@@ -270,12 +280,11 @@ $fontStack: "Arial";
 
                 input{
                     width: 100%;
-                    height: 50px;
                     font-size: 18px;
                     border: none;
                     appearance: none;
-                    background-color: transparent;
                     outline: none;
+                    background-color: #fff;
                     &::placeholder{
                         color: lightgray;
                     }
@@ -305,6 +314,26 @@ $fontStack: "Arial";
             width: 150px !important;
         }
  
+    }
+
+    .home .container .chatBox {
+        background-color: #141A26;
+    }
+
+    .home .container .chatBox .messageBox{
+        border-top-left-radius: 10px;
+    }
+    
+    .chatSidebar{
+        display: none;
+    }
+
+    .home .container .sideNavbar {
+        width: 10%;
+    }
+
+    .home .container .chatBox {
+        width: 90%;
     }
 
 }

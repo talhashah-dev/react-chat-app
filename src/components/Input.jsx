@@ -1,12 +1,13 @@
-import React from "react";
-import { IoIosSend } from "react-icons/io";
+import React, { useState } from "react";
+import { VscSend } from "react-icons/vsc";
+
 
 function Input() {
   return (
     <div className="input">
       <input type="text" placeholder="Write a message..." />
       <div className="send">
-        <IoIosSend style={{ fontSize: "24px", cursor: "pointer" }} />
+        <VscSend style={{ fontSize: "22px", cursor: "pointer"}} />
       </div>
     </div>
   );

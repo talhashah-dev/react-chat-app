@@ -1,6 +1,6 @@
 import React from 'react'
 import SigninImg from "../assets/images/signin.png"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth} from "../firebase";
 
@@ -8,6 +8,7 @@ import { auth} from "../firebase";
 
 function Login() {
 
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -20,7 +21,7 @@ function Login() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(`User ${user.email} logged in!`)
-        location.replace("/home")
+        navigate("home")
       })
       .catch((error) => {
         console.log(error)
@@ -48,6 +49,10 @@ function Login() {
         <span className="title">Sign in</span>
         <input type="email" placeholder="Email" required />
         <input type="password" placeholder="Password" required />
+        <span style={{display: "flex", gap: "5px"}}>
+        <input type="checkbox"  id="remember" />
+        <label htmlFor="remember">Remember me</label>
+        </span>
         <button>Log in</button>
       </form>
     </div>
