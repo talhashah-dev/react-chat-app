@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SigninImg from "../assets/images/signin.png"
 import { Link, useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -8,6 +8,7 @@ import { auth} from "../firebase";
 
 function Login() {
 
+  const [err,setErr] = useState("");
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -24,8 +25,9 @@ function Login() {
         navigate("home")
       })
       .catch((error) => {
+        setErr(error.message)
         console.log(error)
-        alert(error)
+        // alert(error)
       });
     } catch (error) {
       console.log(error)
@@ -54,6 +56,7 @@ function Login() {
         <label htmlFor="remember">Remember me</label>
         </span>
         <button>Log in</button>
+        <span>{err}</span>
       </form>
     </div>
   </div>

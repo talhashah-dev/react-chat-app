@@ -227,9 +227,19 @@ body{
                 .message{   
                     display: flex;
                     flex-direction: column;
+                    padding-bottom: 100px;
+                    gap: 5px;
+
+                    img {
+                        width: 250px;
+                        height: 350px;
+                        border-radius: 10px 10px 0 10px;
+                        box-shadow: 2px 2px 5px #ccc;
+                        object-fit: cover;
+                        cursor: pointer;
+                    }
                     
                     p{
-                        margin: 5px 0;
                         padding: 10px 10px;
                         max-width: 60%;
                         width: 10px;
@@ -237,6 +247,16 @@ body{
                         border-radius: 5px 5px 5px 0;
                         box-shadow: 2px 2px 5px #ccc;
                         background-color: #fff;
+                    }
+
+                    &.owner {
+                        align-items: flex-end;
+
+                        p{
+                            background-color: #708ce9;
+                            color: #fff;
+                            border-radius: 10px 10px 0 10px;
+                        }
                     }
                 }
                 
@@ -286,7 +306,7 @@ body{
                     outline: none;
                     background-color: #fff;
                     &::placeholder{
-                        color: lightgray;
+                        color: gray;
                     }
                 }
             }
@@ -314,6 +334,11 @@ body{
             width: 150px !important;
         }
  
+    }
+
+    .home .container .chatBox .messageBox .message img {
+        width: 200px;
+        height: 350px;
     }
 
     .home .container .chatBox {
