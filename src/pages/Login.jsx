@@ -51,10 +51,10 @@ function Login() {
         <span className="title">Sign in</span>
         <input type="email" placeholder="Email" required />
         <input type="password" placeholder="Password" required />
-        <span style={{display: "flex", gap: "5px"}}>
+        {/* <span style={{display: "flex", gap: "5px"}}>
         <input type="checkbox"  id="remember" />
         <label htmlFor="remember">Remember me</label>
-        </span>
+        </span> */}
         <button>Log in</button>
         <span>{err}</span>
       </form>

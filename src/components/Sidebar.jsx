@@ -1,6 +1,8 @@
 import React from "react";
 import { FaMessage , FaUser, FaGear } from "react-icons/fa6";
 import { IoIosLogOut } from "react-icons/io";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
 
 
@@ -19,7 +21,7 @@ function SideNavbar() {
         <h2>
            <FaGear style={{color: "#fff", cursor:"pointer"}}/>
         </h2>
-        <h2>
+        <h2 onClick={() => signOut(auth)}>
           <IoIosLogOut style={{color: "#fff", cursor:"pointer"}} />
         </h2>
       </div>

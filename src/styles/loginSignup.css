@@ -1,0 +1,81 @@
+.formContainer {
+  background-color: #f8f8f8;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formContainer .formWrapper {
+  background-color: #fff;
+  padding: 70px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px #d1d1d1;
+}
+.formContainer .formWrapper .formImage {
+  display: flex;
+  flex-direction: column;
+}
+.formContainer .formWrapper .formImage img {
+  width: 300px;
+}
+.formContainer .formWrapper .formImage .link {
+  color: #444;
+  text-decoration: none;
+}
+.formContainer .formWrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.formContainer .formWrapper form label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.formContainer .formWrapper form label img {
+  width: 20px;
+}
+.formContainer .formWrapper form label p {
+  font-size: 14px;
+}
+.formContainer .formWrapper form div input {
+  width: auto;
+}
+.formContainer .formWrapper form .title {
+  font-weight: 700;
+  font-size: 36px;
+  text-align: left;
+}
+.formContainer .formWrapper form input {
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  outline: none;
+  width: 18rem;
+}
+.formContainer .formWrapper form input:focus {
+  background-color: rgba(0, 0, 0, 0.0666666667);
+}
+.formContainer .formWrapper form input[type=checkbox] {
+  width: auto !important;
+}
+.formContainer .formWrapper form #fileInput {
+  display: none;
+}
+.formContainer .formWrapper form button {
+  padding: 8px;
+  background-color: #6d84d1;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 18px;
+  width: 100px;
+}
+.formContainer .formWrapper form button:active {
+  background-color: #4a6ddd;
+}/*# sourceMappingURL=loginSignup.css.map */
