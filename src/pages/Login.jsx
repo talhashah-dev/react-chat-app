@@ -1,66 +1,49 @@
-import React, { useState } from 'react'
-import SigninImg from "../assets/images/signin.png"
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState } from "react";
+import SigninImg from "../assets/images/signin.png";
+import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth} from "../firebase";
-
-
+import { auth } from "../firebase";
 
 function Login() {
-
-  const [err,setErr] = useState("");
+  const [err, setErr] = useState("");
   const navigate = useNavigate();
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
 
     try {
-      console.log(email , password)
-      const res = await signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(`User ${user.email} logged in!`)
-        navigate("home")
-      })
-      .catch((error) => {
-        setErr(error.message)
-        console.log(error)
-        // alert(error)
-      });
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          navigate("/");
+        })
+        .catch((error) => {
+          setErr(error.message);
+        });
     } catch (error) {
-      console.log(error)
+      setErr(error);
     }
-
-  }
-
+  };
 
   return (
     <div className="formContainer">
-    <div className="formWrapper">
-    <div className="formImage"> 
+      <div className="formWrapper">
+        <div className="formImage">
           <img src={SigninImg} alt="" />
           <Link to={"/signup"}>
-            <p className="link">
-              Create an account
-            </p>
+            <p className="link">Create an account</p>
           </Link>
         </div>
-      <form onSubmit={handleSubmit}>
-        <span className="title">Sign in</span>
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Password" required />
-        {/* <span style={{display: "flex", gap: "5px"}}>
-        <input type="checkbox"  id="remember" />
-        <label htmlFor="remember">Remember me</label>
-        </span> */}
-        <button>Log in</button>
-        <span>{err}</span>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <span className="title">Sign in</span>
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button>Log in</button>
+          {err && <p style={{ color: "red" }}>Something is Wrong!</p>}
+        </form>
+      </div>
     </div>
-  </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
