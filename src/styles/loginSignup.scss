@@ -1,29 +1,34 @@
-
 .formContainer {
-    background-color: #f8f8f8;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  background-color: #f8f8f8;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   .formWrapper {
     background-color: #fff;
     padding: 70px;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 10px 10px 15px #d1d1d1;
-    // width: 750px;
-    // height: 500px;
+    height: 400px;
 
     .formImage {
       display: flex;
       flex-direction: column;
+      gap: 15px;
       img {
         width: 300px;
+      }
+      img.login {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        width: 250px;
       }
       a {
         color: #444;
@@ -64,14 +69,11 @@
       }
 
       input {
-        border: none;
-        border-bottom: 1px solid gray;
+        border: 1px solid lightblue;
+        border-radius: 20px;
         padding: 10px;
         outline: none;
         width: 18rem;
-      }
-      input:focus {
-        background-color: #eee;
       }
 
       input[type="checkbox"] {
@@ -83,16 +85,16 @@
       }
       button {
         padding: 8px;
-        background-color: #6d84d1;
+        background-color: #4a6ddd;
         border: none;
         cursor: pointer;
-        border-radius: 2px;
+        border-radius: 20px;
         color: #fff;
         font-size: 18px;
         width: 100px;
       }
       button:active {
-        background-color: #4a6ddd;
+        background-color: #6d84d1;
       }
     }
   }

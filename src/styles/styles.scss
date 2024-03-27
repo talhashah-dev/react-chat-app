@@ -29,6 +29,10 @@ body {
   gap: 25px;
   height: 100vh;
 
+  img{
+    width: 300px;
+  }
+
   .infoText {
     display: flex;
     flex-direction: column;
@@ -44,6 +48,7 @@ body {
     button {
       padding: 10px 15px;
       font-size: 18px;
+      border-radius: 20px;
       outline: none;
       border: none;
       cursor: pointer;
@@ -323,8 +328,11 @@ body {
 // For Mobile Screen
 @media screen and (max-width: 425px) {
   .formWrapper {
-    padding: 10px !important;
+    padding: 0px;
     flex-direction: column-reverse !important;
+    height: 100% !important;
+    width: 100%;
+    border-radius: 0 !important;
 
     form .title {
       text-align: center !important;
@@ -334,9 +342,11 @@ body {
   .formImage {
     align-items: center;
     img {
-      width: 150px !important;
+    //   display: none !important;
+    width: 200px !important;
     }
   }
+  
 
   .home .container .chatBox .messageBox .message img {
     width: 200px;

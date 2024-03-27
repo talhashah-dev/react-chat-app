@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SigninImg from "../assets/images/signin.png";
+import LoginImg from "../assets/images/login.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
@@ -29,7 +29,7 @@ function Login() {
     <div className="formContainer">
       <div className="formWrapper">
         <div className="formImage">
-          <img src={SigninImg} alt="" />
+          <img src={LoginImg} alt="Login" className="login" />
           <Link to={"/signup"}>
             <p className="link">Create an account</p>
           </Link>

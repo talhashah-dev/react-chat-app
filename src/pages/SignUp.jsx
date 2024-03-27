@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SignupImg from "../assets/images/signup.png";
+import SignupImg from "../assets/images/signup.webp";
 import { FaImage } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -40,7 +40,7 @@ function Register() {
     <div className="formContainer">
       <div className="formWrapper">
         <div className="formImage">
-          <img src={SignupImg} alt="" />
+          <img src={SignupImg} alt="Signup" />
           <Link to={"/login"}>
             <p className="link">I am already a member</p>
           </Link>
