@@ -29,7 +29,7 @@ body {
   gap: 25px;
   height: 100vh;
 
-  img{
+  img {
     width: 300px;
   }
 
@@ -74,10 +74,24 @@ body {
       flex-direction: column;
       width: 5%;
       background-color: #141a26;
+      padding: 10px 0;
+
+      .profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10%;
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 1px solid #fff;
+        }
+      }
 
       .sections {
         padding-top: 30px;
-        height: 80%;
+        height: 70%;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -342,11 +356,10 @@ body {
   .formImage {
     align-items: center;
     img {
-    //   display: none !important;
-    width: 200px !important;
+      //   display: none !important;
+      width: 200px !important;
     }
   }
-  
 
   .home .container .chatBox .messageBox .message img {
     width: 200px;
@@ -375,18 +388,18 @@ body {
 
   .notFound {
     img {
-        display: none;
+      display: none;
     }
 
-    .infoText{
-        align-items: center;
-        h1 {
-            font-size: 80px;
-        }
+    .infoText {
+      align-items: center;
+      h1 {
+        font-size: 80px;
+      }
 
-        h2 {
-            font-size: 30px;
-        }
+      h2 {
+        font-size: 30px;
+      }
     }
   }
 }

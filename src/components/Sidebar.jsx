@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaMessage , FaUser, FaGear } from "react-icons/fa6";
 import { IoIosLogOut } from "react-icons/io";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
+import { AuthContext } from "../Context/AuthContext";
 
 
 
-function SideNavbar() {
+function Sidebar() {
+  const {currentUser} = useContext(AuthContext)
   return (
     <div className="sideNavbar">
+      <div className="profile">
+        <img src={currentUser.photoURL} alt="" />
+      </div>
       <div className="sections">
           <h2>
             <FaMessage style={{color: "#fff", cursor:"pointer"}} />
@@ -29,4 +34,4 @@ function SideNavbar() {
   );
 }
 
-export default SideNavbar;
+export default Sidebar;
