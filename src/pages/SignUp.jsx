@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SignupImg from "../assets/images/signup.webp";
 import { FaImage } from "react-icons/fa";
-import { Link, useNavigate  } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
@@ -9,7 +9,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 function Register() {
   const navigate = useNavigate();
-  const [err, setErr] = useState(false);
+  const [err, setErr] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     let name = e.target[0].value;
@@ -32,35 +32,33 @@ function Register() {
           setErr(err);
         },
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateProfile(res.user, {
-              name,
-              photoURL: downloadURL
-            });
-            await setDoc(doc(db, "users", res.user.uid), {
-              uid: res.user.uid,
-              name,
-              email,
-              photoURL:downloadURL
+          getDownloadURL(uploadTask.snapshot.ref)
+            .then(async (downloadURL) => {
+              await updateProfile(res.user, {
+                name,
+                photoURL: downloadURL,
+              });
+              await setDoc(doc(db, "users", res.user.uid), {
+                uid: res.user.uid,
+                name,
+                email,
+                photoURL: downloadURL,
+              });
             })
-          })
-          .then(
-            (e.target[0].value = ""),
-            (e.target[1].value = ""),
-            (e.target[2].value = ""),
-            navigate("/")
-          )
-          .catch((error) => {
-            console.log("error: ",error);
-            console.log("error: ",error.code);
-            console.log("error: ",error.message);
-          });
+            .then(
+              (e.target[0].value = ""),
+              (e.target[1].value = ""),
+              (e.target[2].value = ""),
+              navigate("/")
+            )
+            .catch((error) => {
+              setErr(error.message);
+            });
         }
-      )
-      
+      );
     } catch (error) {
-      console.log(error)
-      setErr(true);
+      console.log(error);
+      setErr(error);
     }
   };
 
@@ -94,9 +92,14 @@ function Register() {
             <FaImage style={{ color: "gray", fontSize: "30px" }} />
             <span style={{ color: "gray" }}>Add an Avatar</span>
           </label>
-          <input type="file" id="imgInput" accept="image/*" style={{ display: "none" }} />
+          <input
+            type="file"
+            id="imgInput"
+            accept="image/*"
+            style={{ display: "none" }}
+          />
+          {err && <span>{err}</span>}
           <button>Sign Up</button>
-          {err}
         </form>
       </div>
     </div>
