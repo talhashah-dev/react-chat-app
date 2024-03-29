@@ -78,10 +78,11 @@ body {
 
       .profile {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 10%;
-        .imageBox {
+        height: 15%;
+        .userImg {
           border: 1px solid white;
           width: 50px;
           height: 50px;
@@ -97,6 +98,11 @@ body {
             border: 1px solid #fff;
           }
         }
+        .userName{
+          p {
+            color: #fff;
+          }
+        }
       }
 
       .sections {
@@ -109,7 +115,7 @@ body {
       }
 
       .actions {
-        height: 20%;
+        height: 15%;
         display: flex;
         align-items: center;
         justify-content: center;

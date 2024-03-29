@@ -12,38 +12,38 @@ function Register() {
   const [err, setErr] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let name = e.target[0].value;
+    let displayName = e.target[0].value;
     let email = e.target[1].value;
     let password = e.target[2].value;
     let file = e.target[3].files[0];
-    
-    console.log(name,email,password)
+
 
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
-      const storageRef = ref(storage, name);
+      const storageRef = ref(storage, displayName);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       uploadTask.on(
         (error) => {
-          console.log(error)
+          console.log(error);
           setErr(err);
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref)
             .then(async (downloadURL) => {
               await updateProfile(res.user, {
-                name,
+                displayName,
                 photoURL: downloadURL,
               });
               await setDoc(doc(db, "users", res.user.uid), {
                 uid: res.user.uid,
-                name,
+                displayName,
                 email,
                 photoURL: downloadURL,
               });
+              await setDoc(doc(db, "userChats", res.user.uid), {});
             })
             .then(
               (e.target[0].value = ""),

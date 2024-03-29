@@ -10,8 +10,11 @@ function Sidebar() {
   return (
     <div className="sideNavbar">
       <div className="profile">
-        <div className="imageBox">
+        <div className="userImg">
           <img src={currentUser.photoURL} alt="" />
+        </div>
+        <div className="userName">
+        <p>{currentUser.displayName}</p>
         </div>
       </div>
       <div className="sections">
