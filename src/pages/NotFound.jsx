@@ -5,7 +5,7 @@ import NOT_FOUND_IMG from "../assets/images/404.jpg"
 function NotFound() {
   return (
     <div className="notFound">
-      <img src={NOT_FOUND_IMG} alt="Not Found Image" />
+      <img src={NOT_FOUND_IMG} alt="Not Found" />
       <div className="infoText">
         <h1>404</h1>
         <h2>Page Not Found!</h2>

@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Search from './Search'
 
 function ChatSidebar() {
-  const [userProfile, setUserProfile] = useState("");
   return (
     <div className="chatSidebar">
       <Search />
