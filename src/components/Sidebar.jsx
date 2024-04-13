@@ -3,7 +3,7 @@ import { FaMessage, FaUser, FaGear } from "react-icons/fa6";
 import { IoIosLogOut } from "react-icons/io";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
-import { AuthContext } from "../Context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 import { db } from "../firebase";
 import { collection, query, where, getDocs, doc } from "firebase/firestore";
 
