@@ -1,1 +1,1 @@
-Chat App built on React.js
+Chat App built on React.js and Firebase.
